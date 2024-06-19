@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+body {
+    background-image: url("/images/alt=background-01.png");
+    background-position: fixed; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    color: #000000;
+}
+h1{
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 0;
+  font-weight: 700;
+  font-size: 50px;
+  color: #000000;
+}
+
+h2{
+  text-align: center;
+}
+h3{
+  text-align: center;
+  font-size: 25px;
+}
+
+/* NAVIGATION */
+
+.top-nav img {
+    width: auto;
+    height: 80px;
+    z-index: 1;
+  }
+  
+  .title {
+     margin: 0;
+     text-align: center;
+     vertical-align: center;
+     color: black;
+     flex-grow: 1px;
+     font-size: 40px;
+  
+  }
+  
+  
+  .top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+    height: 70px;
+    padding: 1em;
+  }
+  
+  a.active,a:hover{
+    background: white;
+    border-radius: 6px;
+    margin: 1.25em;
+    transition: all 0.1s ease-in-out;
+    transform: scale(1);
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+  }
+  
+  a.home:link {
+    color: black;
+  }
+  
+  a.home:visited {
+    color: black;
+  }
+  
+  a.home:link, a:visited {
+    text-decoration: none;
+  }
+  
+  a:link {
+    color: black;
+  }
+  
+  a:visited {
+    color:black;
+  }
+  
+  a:link, a:visited {
+    text-decoration: none;
+    margin: 10px;
+  }
+  
+  
+  .menu > li {
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+    margin: 20px 10px;
+    overflow: hidden;
+  }
+  
+  .menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+  
+  .menu-button::before {
+    content: '';
+    margin-top: -8px;
+  }
+  
+  .menu-button::after {
+    content: '';
+    margin-top: 8px;
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: none;
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+  
+  @media (max-width: 1000px) {
+    .menu-button-container {
+      display: flex;
+    }
+  
+    .title{
+        font-size: 18px;
+    }
+  
+    .top-nav img{
+        height: 40px;
+    }
+    .menu {
+      position: absolute;
+      top: 0;
+      margin-top: 120px;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+    #menu-toggle ~ .menu li {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      z-index: 1;
+    }
+    #menu-toggle:checked ~ .menu li {
+      border: 1px solid #d8e8ea;
+      height: 2.5em;
+      padding: 0.5em;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      z-index: 1;
+    }
+    .menu > li {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.5em 0;
+      width: 100%;
+      color: black;
+      background-color: #a9cdd2;
+      z-index: 1;
+    }
+    .menu > li:not(:last-child) {
+      border-bottom: 1px solid #255d64;
+      z-index: 1;
+    }
+    a:hover, a.active{
+        background: none;
+        color: #255d64;
+        z-index: 1;
+    }
+  }
+  /* GRID */
+
+  section#grid {
+    margin-right: 40px;
+    margin-left: 40px;
+    text-align: justify;
+    font-weight: 550;
+    font-size: 18px;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    row-gap: 1em;
+  }
+  .tango img{ 
+    width: 100%;
+    height: auto;
+  }
+  
+  /* HOVER */
+
+  .column {
+    margin: 15px 15px 0;
+    padding: 0;
+  }
+  .column:last-child {
+    padding-bottom: 60px;
+  }
+  .column::after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+  .column div {
+    position: relative;
+    float: left;
+    width: 300px;
+    height: 300px;
+    margin: 0 0 0 25px;
+    padding: 0;
+  }
+  .column div:first-child {
+    margin-left: 0;
+  }
+  .column div span {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 300px;
+    margin: 0;
+    padding: 0;
+    color: #444;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    opacity: 0;
+  }
+figure {
+  width: 400px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+figure img{
+	width: 100%;
+}
+figure:hover+span {
+	bottom: -100px;
+	opacity: 1;
+}
+
+.hover14 figure {
+	position: relative;
+}
+.hover14 figure::before {
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	-webkit-transform: skewX(-25deg);
+	transform: skewX(-25deg);
+}
+.hover14 figure:hover::before {
+	-webkit-animation: shine .75s;
+	animation: shine .75s;
+}
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+
+
+/* MOBILE + other devices*/
+
+@media (max-width: 1000px) {
+    h1{
+      font-size: 18px;
+    }
+    h2{
+      font-size: 17px;
+    }
+    h3{
+      font-size:15px;
+    }
+    main{
+        .grid {
+            margin-right: 5%;
+            margin-left: 5%;
+            text-align: justify;
+            font-weight: 550;
+            position: relative;
+            font-size: 10px;
+            width: 100%;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: auto;
+            gap: 10px;
+        }
+
+        .tango img{
+            width: 100%;
+            height: auto;
+          }
+    }
+
+    .column {
+      margin: 15px 15px 0;
+      padding: 0;
+    }
+    .column:last-child {
+      padding-bottom: 40px;
+    }
+    .column::after {
+      content: '';
+      clear: both;
+      display: block;
+    }
+    .column div {
+      position: relative;
+      float: left;
+      width: 300px;
+      height: 300px;
+      margin: 0 0 0 25px;
+      padding: 0;
+    }
+    .column div:first-child {
+      margin-left: 0;
+    }
+    .column div span {
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      z-index: -1;
+      display: block;
+      width: 300px;
+      margin: 0;
+      padding: 0;
+      color: #444;
+      font-size: 10px;
+      text-decoration: none;
+      text-align: center;
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+      opacity: 0;
+    }
+  figure {
+    width: 300px;
+    height: 300px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  figure img{
+    width: 100%;
+  }
+  figure:hover+span {
+    bottom: -40px;
+    opacity: 1;
+  }
+  
+  .hover14 figure {
+    position: relative;
+  }
+  .hover14 figure::before {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+    -webkit-transform: skewX(-25deg);
+    transform: skewX(-25deg);
+  }
+  .hover14 figure:hover::before {
+    -webkit-animation: shine .75s;
+    animation: shine .75s;
+  }
+  @-webkit-keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
+  @keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
+  }
